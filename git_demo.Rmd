@@ -15,7 +15,9 @@ library(palmerpenguins)
 
 # test plot
 ```{r}
-ggplot(penguins, aes(x = species, y = body_mass_g)) +
-  geom_violin(aes(fill = species))
+ggplot(penguins, aes(x = species, y = body_mass_g / 1000)) +
+  geom_violin(aes(fill = species), show.legend = F) +
+  theme_classic() +
+  labs(x = "Species", y = "Body Mass (kg)")
 ```
 

@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 library(tidyverse)
 library(palmerpenguins)
-library(beeswarm)
+library(ggbeeswarm)
 
 ```
 
@@ -18,7 +18,7 @@ library(beeswarm)
 ```{r}
 ggplot(penguins, aes(x = species, y = body_mass_g / 1000)) +
   geom_violin(aes(fill = species, alpha = 0.3), show.legend = F) +
-  geom_boxplot(alpha = 0.1) +
+  geom_beeswarm(alpha = 0.1) +
   theme_classic() +
   labs(x = "Species", y = "Body Mass (kg)")
   
